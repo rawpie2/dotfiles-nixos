@@ -11,9 +11,10 @@ in
       systemPackages = with pkgs; [
         monado
       ];
-      variables = {
-        STEAMVR_LH_ENABLE = true;
-      };
+#      variables = {
+#        STEAMVR_LH_ENABLE = true;
+#        XRT_COMPOSITOR_COMPUTE = 1;
+#      };
     };
     services = {
       monado = {

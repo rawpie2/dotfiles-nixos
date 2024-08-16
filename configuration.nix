@@ -12,6 +12,7 @@
     ./user/general/cli/zsh/zsh.nix
     ./user/general/gui/wezterm/wezterm.nix
     ./hardware/desktop.nix
+    ./user/general/cli/neovim/nvim.nix
     ];
   stylix = {
     enable = true;
@@ -55,7 +56,7 @@
   btop.enable = true;
   zsh.enable = true;
   wezterm.enable = true;
-  vr.enable = false;
+  vr.enable = true;
 
   desktop.enable = true;
   nvidia.enable = true;
@@ -186,13 +187,8 @@
     systemPackages = with pkgs; [ 
       firefox
       floorp
-      git
-      wget
-      gcc
-      unzip
       rustup
       keepassxc
-      git-credential-keepassxc
       syncthingtray-minimal
       spotify
       gimp

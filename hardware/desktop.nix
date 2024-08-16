@@ -12,8 +12,8 @@ in
 
     fileSystems."/mnt/nvme2n1p2" = {
       device = "/dev/nvme2n1p2";
-      fsType = "auto";
-      options = [ "defaults" "user" "rw" "utf8" "noauto" "umask=000" ];
+      fsType = "ntfs";
+      options = [ "defaults" "user" "rw" "utf8" "umask=000" ];
      };
   };
 }

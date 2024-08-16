@@ -9,7 +9,13 @@ in
   config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       hyfetch
-      pciutils 
+      pciutils
+      git
+      fd
+      wget
+      gcc
+      unzip
+      git-credential-keepassxc
     ];
   };
 }
