@@ -11,6 +11,7 @@
     ./user/general/cli/btop.nix
     ./user/general/cli/zsh/zsh.nix
     ./user/general/gui/wezterm/wezterm.nix
+    ./hardware/desktop.nix
     ];
   stylix = {
     enable = true;
@@ -55,6 +56,8 @@
   zsh.enable = true;
   wezterm.enable = true;
   vr.enable = false;
+
+  desktop.enable = true;
   nvidia.enable = true;
 
 ###################
@@ -194,6 +197,7 @@
       spotify
       gimp
       obsidian
+      gparted
     ];
   };
 
