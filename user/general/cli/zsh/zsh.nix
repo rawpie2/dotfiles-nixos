@@ -31,7 +31,10 @@ in
 
     home-manager.users.rawpie.home = {
       packages = with pkgs; [ eza ];
-      file.".zshrc".source = ./.zshrc;
+      file.".zshrc" = {
+        source = ./.zshrc;
+        recursive = true;
+      };
     };
   };
 }

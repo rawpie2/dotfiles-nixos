@@ -10,6 +10,7 @@
     ./user/modules/vr.nix
     ./user/general/cli/btop.nix
     ./user/general/cli/zsh/zsh.nix
+    ./user/general/gui/wezterm/wezterm.nix
     ];
   stylix = {
     enable = true;
@@ -52,7 +53,7 @@
   cliutils.enable = true;
   btop.enable = true;
   zsh.enable = true;
-
+  wezterm.enable = true;
   vr.enable = false;
   nvidia.enable = true;
 

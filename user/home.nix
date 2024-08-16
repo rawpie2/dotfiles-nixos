@@ -4,10 +4,6 @@
   home.stateVersion = "24.05";
   fonts.fontconfig.enable = true;
 
-  home.packages = [
-    (pkgs.nerdfonts.override { fonts = [ "Hack" "FiraCode" ]; }) 
-  ];
-
 ### Fix gtk bs
   # force creation of ~/.config/gtk-2.0/gtkrc otherwise home-manager will fail
   home.file.${config.gtk.gtk2.configLocation}.force = true;
