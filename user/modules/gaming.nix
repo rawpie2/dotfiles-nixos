@@ -16,6 +16,7 @@ in
     };
     environment.systemPackages = with pkgs; [
       protontricks
+      prismlauncher
       heroic
       lutris
       itch
