@@ -3,24 +3,24 @@
 -- based on
 -- base16-vim (https://github.com/chriskempson/base16-vim)
 -- by Chris Kempson (https://github.com/chriskempson)
--- rawpie colors
+-- scheme by rawpie
 
-local gui00 = "#262626"
-local gui01 = "#AF5F5F"
-local gui02 = "#5F875F"
-local gui03 = "#87875F"
-local gui04 = "#5F87AF"
-local gui05 = "#5F5F87"
-local gui06 = "#5F8787"
-local gui07 = "#6C6C6C"
-local gui08 = "#444444"
-local gui09 = "#FF8700"
-local gui0A = "#87AF87"
-local gui0B = "#FFFFAF"
-local gui0C = "#87AFD7"
-local gui0D = "#8787AF"
-local gui0E = "#5FAFAF"
-local gui0F = "#BCBCBC"
+local gui00 = "#261920"
+local gui01 = "#4d1b35"
+local gui02 = "#671b43"
+local gui03 = "#8f1f5a"
+local gui04 = "#b94682"
+local gui05 = "#d575a8"
+local gui06 = "#e9a1c6"
+local gui07 = "#ffffff"
+local gui08 = "#ff0000"
+local gui09 = "#00beff"
+local gui0A = "#00a209"
+local gui0B = "#d97b00"
+local gui0C = "#7d0090"
+local gui0D = "#ff00b0"
+local gui0E = "#0051ff"
+local gui0F = "#fff2fb"
 
 local cterm00 = 0
 local cterm03 = 8
@@ -43,7 +43,7 @@ vim.cmd [[
   highlight clear
   syntax reset
 ]]
-vim.g.colors_name = "rawpie"
+vim.g.colors_name = "base16"
 
 -- Vim editor colors                    fg bg ctermfg ctermbg attr guisp
 vim.api.nvim_set_hl(0, 'Normal', { fg = gui05, bg = gui00, ctermfg = cterm05, ctermbg = cterm00 })
@@ -280,4 +280,3 @@ vim.api.nvim_set_hl(0, 'StartifySpecial', { fg = gui03, ctermfg = cterm03 })
 vim.api.nvim_set_hl(0, 'javaOperator', { fg = gui0D, ctermfg = cterm0D })
 
 -- vim: filetype=lua
-
