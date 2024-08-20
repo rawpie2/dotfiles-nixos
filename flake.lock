@@ -209,11 +209,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1724128279,
-        "narHash": "sha256-1soQejEX/90ceeq85OKXPNLokvxG/DDAhhj9bwmlvRg=",
+        "lastModified": 1724129787,
+        "narHash": "sha256-7aO1hWJxz46Q3HziyCrGeBhKf3WMLkfhTrVX0Wb2n68=",
         "owner": "rawpie2",
         "repo": "dotfiles-nvim",
-        "rev": "ca191be85db1c6a0df855000880ff04c78c2a19e",
+        "rev": "433add6db07100ae7d1444339a19c5f1a63e60bd",
         "type": "github"
       },
       "original": {
