@@ -152,18 +152,6 @@
 #        CPU_MAX_PERF_ON_BAT = 80;
 #      };
 #    };
-    syncthing = {
-      enable = true;
-      user = "rawpie";
-      dataDir = "/home/rawpie/Documents";
-      configDir = "/home/rawpie/.config/syncthing";
-      systemService = true;
-      settings = {
-        gui = {
-          user = "rawpie";
-        };
-      };
-    };
 
     printing = {
       enable = true;
@@ -196,6 +184,8 @@
       gparted
       mpv
       syncplay
+      feishin
+      xclip
     ];
   };
 

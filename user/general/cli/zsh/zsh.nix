@@ -16,6 +16,7 @@ in
         syntaxHighlighting.enable = true;
         shellAliases = {
           ls = "eza -a";
+	  nv = "nvim";
         };
         ohMyZsh = {
           enable = true;

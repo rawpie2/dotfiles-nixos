@@ -15,6 +15,12 @@
       inputs.home-manager.follows = "home-manager";
     };
 
+    nvim = {
+      url = "github:rawpie2/dotfiles-nvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+
 ###
 
   };
@@ -35,6 +41,7 @@
             modules = [
               ./configuration.nix
               inputs.stylix.nixosModules.stylix
+	      inputs.nvim.nixosModules.nvim
               home-manager.nixosModules.default
               {
                 home-manager.useGlobalPkgs = true;
