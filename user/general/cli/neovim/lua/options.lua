@@ -5,7 +5,7 @@ vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
 vim.opt.wrap = false
-vim.cmd 'colorsceme base16'
+vim.cmd 'colorscheme base16'
 
 vim.opt.hlsearch = false
 vim.opt.ignorecase = true
