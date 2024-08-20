@@ -12,7 +12,6 @@
     ./user/general/cli/zsh/zsh.nix
     ./user/general/gui/wezterm/wezterm.nix
     ./hardware/desktop.nix
-    ./user/general/cli/neovim/nvim.nix
     ];
   stylix = {
     enable = true;

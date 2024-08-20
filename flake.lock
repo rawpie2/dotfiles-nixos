@@ -199,10 +199,34 @@
         "type": "github"
       }
     },
+    "nvim": {
+      "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1724128279,
+        "narHash": "sha256-1soQejEX/90ceeq85OKXPNLokvxG/DDAhhj9bwmlvRg=",
+        "owner": "rawpie2",
+        "repo": "dotfiles-nvim",
+        "rev": "ca191be85db1c6a0df855000880ff04c78c2a19e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rawpie2",
+        "repo": "dotfiles-nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
+        "nvim": "nvim",
         "stylix": "stylix"
       }
     },
