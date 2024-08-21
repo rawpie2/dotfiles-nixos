@@ -22,6 +22,7 @@ in
       itch
       wineWowPackages.stable
       winetricks
+      (writers.writeBashBin "protonhax" (builtins.readFile ./protonhax))
     ];
   };
 }
