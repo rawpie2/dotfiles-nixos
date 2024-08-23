@@ -15,7 +15,7 @@ in
        pkill .Discord-wrapp 
        export NIXPKGS_ALLOW_UNFREE=1; nix run nixpkgs#discord --impure
       '')
-
+      signal-desktop
       telegram-desktop
     ];
   };
