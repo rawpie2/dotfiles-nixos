@@ -7,11 +7,13 @@
     ./user/modules/gaming.nix
     ./user/general/cli/cli-utils.nix
     ./hardware/nvidia.nix
+    ./hardware/laptop.nix
     ./user/modules/vr.nix
     ./user/general/cli/btop.nix
     ./user/general/cli/zsh/zsh.nix
     ./user/general/gui/wezterm/wezterm.nix
     ./hardware/desktop.nix
+    ./user/general/x/rofi/rofi.nix
     ];
   stylix = {
     enable = true;
@@ -43,9 +45,17 @@
 ### Flakes!!
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+### Zen
   boot= {
     kernelPackages = pkgs.linuxKernel.packages.linux_zen;
   };
+
+### OpenGL
+#  hardware.opengl = {
+#    enable = true;
+#    driSupport = true;
+#    driSupport32Bit = true;
+#};
 
 ##### Modules #####
 
@@ -56,7 +66,9 @@
   zsh.enable = true;
   wezterm.enable = true;
   vr.enable = true;
+  rofi.enable = true;
 
+  laptop.enable = false;
   desktop.enable = true;
   nvidia.enable = true;
 

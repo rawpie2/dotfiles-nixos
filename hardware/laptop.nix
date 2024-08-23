@@ -1,10 +1,10 @@
 { lib, config, nixos-hardware, ... }:
 let
-  cfg = config.desktop;
+  cfg = config.laptop;
 in
 {
-  options.desktop = {
-    enable = lib.mkEnableOption "desktop";
+  options.laptop = {
+    enable = lib.mkEnableOption "laptop";
   };
   config = lib.mkIf cfg.enable {
     hardware.bluetooth.enable = true;

@@ -10,6 +10,7 @@ in
     nixpkgs.config.allowBroken = true;
     programs.steam = {
       enable = true;
+      gamescopeSession.enable = true;
       extraCompatPackages = with pkgs; [
         proton-ge-bin
       ];
@@ -24,5 +25,8 @@ in
       winetricks
       (writers.writeBashBin "protonhax" (builtins.readFile ./protonhax))
     ];
+
+    programs.gamemode.enable = true;
+
   };
 }

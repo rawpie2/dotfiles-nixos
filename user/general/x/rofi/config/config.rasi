@@ -1,0 +1,11 @@
+configuration{
+  font: "Hack Nerd Font Mono 12";
+  line-margin: 10;
+
+  modi: "run,window,ssh";
+  terminal: "wezterm";
+  location: 0;
+  hide-scrollbar: true;
+  sidebar-mode: true;
+}
+@theme "custom"
