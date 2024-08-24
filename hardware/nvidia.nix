@@ -7,8 +7,6 @@ in
     enable = lib.mkEnableOption "nvidia";
   };
   config = lib.mkIf cfg.enable {
-    #Nvidia settings for hybrid graphics(AMD video cores and Nvidia)
-
     services.xserver = { 
 	videoDrivers = ["nvidia"];
 #	config = ''
@@ -26,13 +24,6 @@ in
       package = config.boot.kernelPackages.nvidiaPackages.stable;
       nvidiaPersistenced = true;
       modesetting.enable = true;
-      #prime = {
-        #offload.enable = true;
-        #sync.enable = true;
-
-        #amdgpuBusId = "PCI:5:0:0";
-        #nvidiaBusId = "PCI:1:0:0";
-      #};
     };
   };
 }
