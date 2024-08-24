@@ -31,7 +31,7 @@
         base0A = "#00a209";
         base0B = "#d97b00";
         base0C = "#7d0090";
-        base0D = "#ff00b0";
+        base0D = "#ea11ae";
         base0E = "#0051ff";
         base0F = "#fff2fb";
       };
