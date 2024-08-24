@@ -1,20 +1,20 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-    ./user/modules/messaging.nix
-    ./user/modules/gaming.nix
-    ./user/general/cli/cli-utils.nix
-    ./hardware/nvidia.nix
-    ./hardware/laptop.nix
-    ./user/modules/vr.nix
-    ./user/general/cli/btop.nix
-    ./user/general/cli/zsh/zsh.nix
-    ./user/general/gui/wezterm/wezterm.nix
-    ./hardware/desktop.nix
-    ./user/general/x/rofi/rofi.nix
-    ];
+#  imports =
+#    [
+#    ./user/modules/messaging.nix
+#    ./user/modules/gaming.nix
+#    ./user/general/cli/cli-utils.nix
+#    ./hardware/nvidia.nix
+#    ./hardware/laptop.nix
+#    ./user/modules/vr.nix
+#    ./user/general/cli/btop.nix
+#    ./user/general/cli/zsh/zsh.nix
+#    ./user/general/gui/wezterm/wezterm.nix
+#    ./hardware/desktop.nix
+#    ./user/general/x/rofi/rofi.nix
+#    ];
   stylix = {
     enable = true;
       base16Scheme = {
@@ -60,17 +60,11 @@
 ##### Modules #####
 
   messaging.enable = true;
-  gaming.enable = true;
   cliutils.enable = true;
   btop.enable = true;
   zsh.enable = true;
   wezterm.enable = true;
-  vr.enable = true;
   rofi.enable = true;
-
-  laptop.enable = false;
-  desktop.enable = true;
-  nvidia.enable = true;
 
 ###################
 

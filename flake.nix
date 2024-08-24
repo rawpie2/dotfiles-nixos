@@ -40,6 +40,12 @@
             };
             modules = [
               ./configuration.nix
+              ./user/modules/messaging.nix
+              ./user/general/cli/cli-utils.nix
+              ./user/general/cli/btop.nix
+              ./user/general/cli/zsh/zsh.nix
+              ./user/general/gui/wezterm/wezterm.nix
+              ./user/general/x/rofi/rofi.nix
               inputs.stylix.nixosModules.stylix
 	      inputs.nvim.nixosModules.nvim
               home-manager.nixosModules.default
@@ -49,6 +55,10 @@
                 home-manager.users.rawpie = import ./user/home.nix;
               }
               ./hardware-configuration/desktop.nix
+              ./hardware/desktop.nix
+              ./hardware/nvidia.nix
+              ./user/modules/vr.nix
+              ./user/modules/gaming.nix
             ];
          };
         };
