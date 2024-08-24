@@ -60,7 +60,36 @@
               ./user/modules/vr.nix
               ./user/modules/gaming.nix
             ];
-         };
+          };
+
+	  thinkpad-nixos = lib.nixosSystem {
+	    system = "x86_64-linux";
+	    specialArgs = {
+              inherit home-manager;
+	      inherit inputs;
+	    };
+	    modules = [
+              ./configuration.nix
+              ./user/modules/messaging.nix
+              ./user/general/cli/cli-utils.nix
+              ./user/general/cli/btop.nix
+              ./user/general/cli/zsh/zsh.nix
+              ./user/general/gui/wezterm/wezterm.nix
+              ./user/general/x/rofi/rofi.nix
+              inputs.stylix.nixosModules.stylix
+	      inputs.nvim.nixosModules.nvim
+              home-manager.nixosModules.default
+              {
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+                home-manager.users.rawpie = import ./user/home.nix;
+              }
+              ./hardware-configuration/laptop.nix
+              ./hardware/laptop.nix
+              #./user/modules/vr.nix
+              #./user/modules/gaming.nix
+            ];
+	  };
         };
     };
 }
