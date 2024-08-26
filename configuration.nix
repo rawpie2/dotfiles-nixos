@@ -1,20 +1,16 @@
 { config, pkgs, ... }:
 
 {
-#  imports =
-#    [
-#    ./user/modules/messaging.nix
-#    ./user/modules/gaming.nix
-#    ./user/general/cli/cli-utils.nix
-#    ./hardware/nvidia.nix
-#    ./hardware/laptop.nix
-#    ./user/modules/vr.nix
-#    ./user/general/cli/btop.nix
-#    ./user/general/cli/zsh/zsh.nix
-#    ./user/general/gui/wezterm/wezterm.nix
-#    ./hardware/desktop.nix
-#    ./user/general/x/rofi/rofi.nix
-#    ];
+  imports =
+    [
+#      ./user/x/i3/i3.nix
+      ./user/modules/messaging.nix
+      ./user/general/cli/cli-utils.nix
+      ./user/general/cli/btop.nix
+      ./user/general/cli/zsh/zsh.nix
+      ./user/general/gui/wezterm/wezterm.nix
+      ./user/general/x/rofi/rofi.nix
+    ];
   stylix = {
     enable = true;
       base16Scheme = {
@@ -59,6 +55,7 @@
 
 ##### Modules #####
 
+#  i3.enable = true;
   messaging.enable = true;
   cliutils.enable = true;
   btop.enable = true;
@@ -126,11 +123,23 @@
         layout = "us";
         variant = "workman";
       };
+      windowManager.i3 = {
+        enable = true;
+        package = pkgs.i3;
+        extraPackages = with pkgs; [
+          nitrogen
+          flameshot
+          libnotify
+          brightnessctl
+	  i3status
+        ];
+      };
     };
 
     displayManager = {
       sddm = {
         enable = true;
+	theme = "where_is_my_sddm_theme";
       };
     };
 
@@ -142,6 +151,13 @@
 
     printing = {
       enable = true;
+    };
+
+    syncthing = {
+      enable = true;
+      systemService = true;
+      user = "rawpie";
+      dataDir = "/home/rawpie";
     };
   };
   # Enable touchpad support (enabled default in most desktopManager).
@@ -160,11 +176,20 @@
 
   environment = {
     systemPackages = with pkgs; [ 
+
+      (where-is-my-sddm-theme.override {
+        themeConfig.General = {
+          backgroundFill = "${config.stylix.base16Scheme.base00}";
+          passwordCursorColor = "${config.stylix.base16Scheme.base01}";
+          passwordTextColor = "${config.stylix.base16Scheme.base0D}";
+        };
+      })
+
       firefox
       floorp
       rustup
       keepassxc
-      syncthingtray-minimal
+      qsyncthingtray
       spotify
       gimp
       obsidian

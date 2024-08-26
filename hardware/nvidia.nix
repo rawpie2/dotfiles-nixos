@@ -16,6 +16,7 @@ hardware.nvidia = {
           #finegrained = true; #maybe comment this out idk what it does
       #};
   package = config.boot.kernelPackages.nvidiaPackages.stable;
+  forceFullCompositionPipeline = true;
   nvidiaPersistenced = true;
   modesetting.enable = true;
 };
