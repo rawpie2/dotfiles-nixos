@@ -75,7 +75,7 @@
               ./hardware-configuration/laptop.nix
               ./hardware/laptop.nix
               #./user/modules/vr.nix
-              #./user/modules/gaming.nix
+              ./user/modules/gaming.nix
             ];
 	  };
         };
