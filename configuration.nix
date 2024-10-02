@@ -36,7 +36,13 @@
    targets.gtk.enable = false;
   };
 
-  programs.dconf.enable = true;
+  programs = {
+    dconf.enable = true;
+    ssh = {
+      startAgent = true;
+     # agentTimeout = "30m";
+    };
+  };
 
 ### Flakes!!
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -82,8 +88,16 @@
   #media-session.enable = true;
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  #boot.loader.systemd-boot.enable = true;
+  boot.loader = {
+    efi.canTouchEfiVariables = true;
+    grub = {
+      enable = true;
+      devices = [ "nodev" ];
+      efiSupport = true;
+      useOSProber = true;
+    };
+  };
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -117,6 +131,10 @@
 
   # Desktop
   services = {
+    automatic-timezoned = {
+      enable = true;
+    };
+
     xserver = {
       enable = true;
       xkb = { #keymap
@@ -150,7 +168,17 @@
     };
 
     printing = {
+      enable = false;
+    };
+
+    openssh = {
       enable = true;
+      settings = {
+        PasswordAuthentication = false;
+	KbdInteractiveAuthentication = false;
+	ClientAliveInterval = 300;
+	ClientAliveCountMax = 2;
+      };
     };
 
     syncthing = {
@@ -159,6 +187,10 @@
       user = "rawpie";
       dataDir = "/home/rawpie";
     };
+
+    udev.packages = with pkgs; [
+      vial
+    ];
   };
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -171,6 +203,7 @@
      "networkmanager"
      "wheel"
     ];
+    openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHdC/Mo03k78Y7tynI9pIod1poCVvxTXyaQeCBUtScjn" ];
     initialPassword = "12345";
   };
 
@@ -199,6 +232,10 @@
       feishin
       xclip
       obs-studio
+      nextcloud-client
+      qflipper
+      vial
+      supersonic
     ];
   };
 

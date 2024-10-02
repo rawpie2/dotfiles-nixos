@@ -16,6 +16,7 @@ in
       gcc
       unzip
       git-credential-keepassxc
+      ani-cli
     ];
   };
 }
