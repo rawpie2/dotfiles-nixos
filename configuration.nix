@@ -47,11 +47,6 @@
 ### Flakes!!
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-### Zen
-  boot= {
-    kernelPackages = pkgs.linuxKernel.packages.linux_zen;
-  };
-
 ### OpenGL
 #  hardware.opengl = {
 #    enable = true;
@@ -139,7 +134,7 @@
       enable = true;
       xkb = { #keymap
         layout = "us";
-        variant = "workman";
+        variant = "";
       };
       windowManager.i3 = {
         enable = true;
@@ -151,13 +146,6 @@
           brightnessctl
 	  i3status
         ];
-      };
-    };
-
-    displayManager = {
-      sddm = {
-        enable = true;
-	theme = "where_is_my_sddm_theme";
       };
     };
 
@@ -236,6 +224,7 @@
       qflipper
       vial
       supersonic
+      openvpn
     ];
   };
 

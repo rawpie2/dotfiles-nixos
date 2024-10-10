@@ -18,6 +18,7 @@ in
           local wezterm = require 'wezterm'
           return {
             font = wezterm.font 'FiraCode Nerd Font Mono',
+                 front_end = "WebGpu",
                  use_fancy_tab_bar = false,
                  hide_tab_bar_if_only_one_tab = true,
                  window_decorations = "RESIZE",
