@@ -25,7 +25,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, jovian, ... }@inputs:
     {
       nixosConfigurations =
         let       
@@ -91,7 +91,6 @@
             modules = [
               ./configuration.nix
               ./user/modules/deck.nix
-	      inputs.jovian.nixosModules.jovian
               inputs.stylix.nixosModules.stylix
               inputs.nvim.nixosModules.nvim
               home-manager.nixosModules.default
