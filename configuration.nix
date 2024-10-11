@@ -66,6 +66,8 @@
 
 ###################
 
+#bell off
+xdg.sounds.enable = false;
 
   swapDevices = [ {
     device = "/var/lib/swapfile";

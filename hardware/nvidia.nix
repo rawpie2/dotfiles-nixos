@@ -19,5 +19,6 @@ hardware.nvidia = {
   forceFullCompositionPipeline = true;
   nvidiaPersistenced = true;
   modesetting.enable = true;
+  open = true;
 };
 }

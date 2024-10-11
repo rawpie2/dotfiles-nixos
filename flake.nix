@@ -25,14 +25,14 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, jovian, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     {
       nixosConfigurations =
         let       
           lib = nixpkgs.lib;
         in
         {
-          nixos = lib.nixosSystem {
+          desktop-nixos = lib.nixosSystem {
             system = "x86_64-linux";
             specialArgs = {
               inherit home-manager;
@@ -91,6 +91,7 @@
             modules = [
               ./configuration.nix
               ./user/modules/deck.nix
+	      inputs.jovian.nixosModules.jovian
               inputs.stylix.nixosModules.stylix
               inputs.nvim.nixosModules.nvim
               home-manager.nixosModules.default
