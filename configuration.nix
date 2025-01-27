@@ -128,9 +128,9 @@ xdg.sounds.enable = false;
 
   # Desktop
   services = {
-    automatic-timezoned = {
-      enable = true;
-    };
+#    automatic-timezoned = {
+#      enable = true;
+#    };
 
     xserver = {
       enable = true;
@@ -219,7 +219,7 @@ xdg.sounds.enable = false;
       gparted
       mpv
       syncplay
-      feishin
+      #feishin
       xclip
       obs-studio
       nextcloud-client

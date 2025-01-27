@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    jovian.url = "github:Jovian-Experiments/Jovian-NixOS";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,7 +24,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, jovian, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     {
       nixosConfigurations =
         let       
@@ -80,41 +79,7 @@
               ./user/general/x/dm.nix
               ./user/modules/gaming.nix
             ];
-	  };
-
-          steamdeck-nixos = lib.nixosSystem {
-            system = "x86_64-linux";
-            specialArgs = {
-              inherit home-manager;
-              inherit inputs;
-            };
-            modules = [
-              ./configuration.nix
-              ./user/modules/deck.nix
-              inputs.stylix.nixosModules.stylix
-              inputs.nvim.nixosModules.nvim
-              home-manager.nixosModules.default
-              {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-                home-manager.users.rawpie = import ./user/home.nix;
-               # home-manager.backupFileExtension = "asdf59031";
-              }
-              jovian.nixosModules.default
-              {
-                jovian.devices.steamdeck.enable = true;
-                jovian.devices.steamdeck.enableGyroDsuService = true;
-                jovian.steam = {
-                  enable = true;
-                  autoStart = true;
-                  desktopSession = "plasmax11";
-                  user = "rawpie";
-                };
-                jovian.decky-loader.enable = true;
-              }
-              ./hardware-configuration/steamdeck.nix
-            ];
-          }; 
+	      };
         };
     };
 }

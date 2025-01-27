@@ -20,6 +20,10 @@
 
   programs.wezterm.enable = true;
 
+  home.packages = with pkgs; [
+    nerd-fonts.fira-code
+  ];
+
   home.file = {
     ##
   };

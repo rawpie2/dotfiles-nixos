@@ -8,9 +8,6 @@ in
   };
   config = lib.mkIf cfg.enable {
     security.sudo.extraConfig = "Defaults pwfeedback"; # show ***** on pw
-    environment.systemPackages = with pkgs; [
-      (nerdfonts.override { fonts = [ "FiraCode" ]; })
-    ];
     home-manager.users.rawpie = {
       programs.wezterm = {
         enable = true;
